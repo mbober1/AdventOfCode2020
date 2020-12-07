@@ -19,23 +19,23 @@ int main() {
             std::cout << max << " ";
 
             getline(database,buffer,':');
-            char dupa = *buffer.c_str();
+            char letter = *buffer.c_str();
 
-            std::cout << dupa << " ";
+            std::cout << letter << " ";
 
             getline(database,buffer);
             std::cout << buffer;
 
             int count = 0;
             
-            std::size_t found = buffer.find(dupa);
+            std::size_t found = buffer.find(letter);
             while (found!=std::string::npos)
             {
                 buffer[found] = '*';
                 count++;
-                found = buffer.find(dupa);
+                found = buffer.find(letter);
             }
-            printf(" Znaleziono %c %d razy \n", dupa, count);
+            printf(" Znaleziono %c %d razy \n", letter, count);
 
             if(count <= max && count >= min) goodPass++;
         }
